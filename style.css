@@ -1,0 +1,123 @@
+:root {
+  --font-main: "Inter", sans-serif;
+
+  --font-size-48: 3rem;
+  --font-size-18: 1.125rem;
+  --font-size-14: 0.875rem;
+  --font-size-12: 0.75rem;
+
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-700: 700;
+  --font-weight-900: 900;
+
+  --line-height-20: 1.25rem;
+
+  --page-padding: 0 2.625rem;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  color: #ffffff;
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
+}
+
+.page-wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 550px;
+}
+
+header {
+  background-image: url(./images/header_bg.png);
+  background-position: 50% 25%;
+  background-size: cover;
+}
+
+.page-header {
+  height: 210px;
+  padding: var(--page-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.page-header > h1 {
+  font-size: var(--font-size-48);
+  font-weight: var(--font-weight-900);
+  letter-spacing: -2px;
+}
+
+.page-header > a {
+  text-decoration: none;
+  color: #ffffff;
+
+  font-weight: var(--font-weight-700);
+  padding-top: 0.75rem;
+}
+
+.search {
+  margin-top: -1.25rem;
+  padding: var(--page-padding);
+  display: flex;
+}
+
+.search-input-wrapper {
+  padding: 0.5rem 0.75rem;
+  flex-grow: 1;
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 6px 0px 0px 6px;
+  border-right: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #ffffff;
+}
+
+.search-input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #6b7280;
+}
+
+.submit-btn {
+  padding: 0.5rem 2rem;
+  background-color: #f9fafb;
+  color: #374151;
+  font-weight: var(--font-weight-500);
+  border: 1px solid #d1d5db;
+  border-radius: 0px 6px 6px 0px;
+  cursor: pointer;
+}
+
+.start {
+  margin: 50% auto;
+  color: #dfdddd;
+  text-align: center;
+}
+
+.results {
+  padding: var(--page-padding);
+}
+
+.start > p {
+  margin: 0.25rem;
+  font-size: var(--font-size-18);
+  font-weight: var(--font-weight-700);
+}
