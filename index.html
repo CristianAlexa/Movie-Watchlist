@@ -10,27 +10,27 @@
     <title>Movie Watchlist</title>
   </head>
   <body>
-<div class="page-wrapper">
-  <header>
-    <section class="page-header">
-      <h1>Find your film</h1>
-      <a href="./watchlist.html">My Watchlist</a>
-    </section>
-  </header>
-  <section class="search">
-    <div class="search-input-wrapper">
-      <img src="./images/Search.svg" class="search-icon"></img>
-    <input type="text" class="search-input" placeholder="Search for a movie">
+    <div class="page-wrapper">
+      <header>
+        <section class="page-header">
+          <h1>Find your film</h1>
+          <a href="./watchlist.html">My Watchlist</a>
+        </section>
+      </header>
+      <section class="search">
+        <div class="search-input-wrapper">
+          <img src="./images/Search.svg" class="search-icon"></img>
+        <input type="text" class="search-input" placeholder="Search for a movie" id="search-input">
+        </div>
+        <input class="submit-btn" type="submit" value="Search" id="search-btn">
+      </section>
+      <section class="results" id="search-results">
+        <div class="start">
+          <img src="./images/film_thumbnail.svg" alt="">
+          <p>Start exploring</p>
+        </div>
+      </section>
     </div>
-    <input class="submit-btn" type="submit" value="Search">
-  </section>
-  <section class="results">
-    <div class="start">
-      <img src="./images/film_thumbnail.svg" alt="">
-      <p>Start exploring</p>
-    </div>
-  </section>
-</div>
-
+    <script src="./app.js"></script>
   </body>
 </html>

@@ -1,7 +1,7 @@
 :root {
   --font-main: "Inter", sans-serif;
 
-  --font-size-48: 3rem;
+  --font-size-46: 2.875rem;
   --font-size-18: 1.125rem;
   --font-size-14: 0.875rem;
   --font-size-12: 0.75rem;
@@ -54,7 +54,7 @@ header {
 }
 
 .page-header > h1 {
-  font-size: var(--font-size-48);
+  font-size: var(--font-size-46);
   font-weight: var(--font-weight-900);
   letter-spacing: -2px;
 }
@@ -106,20 +106,28 @@ header {
   cursor: pointer;
 }
 
-.start {
-  margin: 50% auto;
-  color: #dfdddd;
-  text-align: center;
-}
-
 .results {
   padding: var(--page-padding);
 }
+.start {
+  margin: 50% auto;
+  color: #dfdddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.start > img {
+  width: 70px;
+}
 
 .start > p {
+  max-width: 80%;
   margin: 0.25rem;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-700);
+  text-align: center;
 }
 
 .add-movies {
