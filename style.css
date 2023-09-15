@@ -109,26 +109,27 @@ header {
 .results {
   padding: var(--page-padding);
   text-align: center;
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
   width: 100%;
 }
-.start {
-  margin: auto auto;
-  height: 100%;
+.search-results {
+  margin: 1rem auto;
+  width: 100%;
+  min-height: 70vh;
   color: #dfdddd;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.start > li {
+.search-results > li {
 }
 
-.start > img {
+.search-results > img {
   width: 70px;
 }
 
-.start > p {
+.search-results > p {
   max-width: 80%;
   margin: 0.25rem;
   font-size: var(--font-size-18);

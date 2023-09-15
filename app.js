@@ -13,20 +13,20 @@ function getErrorHtml() {
         </div>`;
 }
 
-const getMovieDetails = (array) => {
+const getMovieDetails = async (array) => {
   const movieAllDetails = [];
-  array.forEach(async (movie) => {
+  for (const movie of array) {
     const movieID = movie.imdbID;
     const APIurl = `${API}?i=${movieID}&${APIkey}`;
     const res = await fetch(APIurl);
     const data = await res.json();
     movieAllDetails.push(data);
-  });
+  }
   return movieAllDetails;
 };
 
-function getMoviesHtml(array) {
-  const moviesList = getMovieDetails(array);
+async function getMoviesHtml(array) {
+  const moviesList = await getMovieDetails(array);
   console.log(moviesList);
   searchResultEl.innerHTML = moviesList
     .map(
