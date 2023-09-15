@@ -30,8 +30,32 @@ async function getMoviesHtml(array) {
   console.log(moviesList);
   searchResultEl.innerHTML = moviesList
     .map(
-      (item) => `
-  <li>${item.Title}</li>
+      (movie) => `
+  <li>
+    <div class="movie-card" id="${movie.imdbID}">
+        <div class="movie-card-image">
+            <img src="${movie.Poster}" alt="${movie.Title}">
+        </div>
+        <div class="movie-card-details">
+            <div class="movie-card-title">
+                ${movie.Title}
+                <span class="movie-card-rating">
+                    <img src="./images/star.svg">
+                    ${movie.imdbRating}
+            </div>
+            <ul class="movie-card-hl">
+                <li>${movie.Runtime}</li>
+                <li>${movie.Genre}</li>
+                <li>
+                    <button class="movie-card-add-btn">
+                        <img src="./images/add.svg">Watchlist
+                    </button>    
+                </li>
+            </ul>
+            <p class="movie-card-plot">${movie.Plot}</p>
+        </div>
+    </div>
+  </li>
   `
     )
     .join("");
