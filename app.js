@@ -26,12 +26,15 @@ const getMovieDetails = (array) => {
 };
 
 function getMoviesHtml(array) {
-  const movieList = getMovieDetails(array);
-  console.log(movieList);
-  searchResultEl.innerHTML = `
-          <div class="start">
-            <p>Bun Asa</p>
-          </div>`;
+  const moviesList = getMovieDetails(array);
+  console.log(moviesList);
+  searchResultEl.innerHTML = moviesList
+    .map(
+      (item) => `
+  <li>${item.Title}</li>
+  `
+    )
+    .join("");
 }
 
 async function getMovieData() {

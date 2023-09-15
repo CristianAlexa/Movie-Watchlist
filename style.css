@@ -108,14 +108,20 @@ header {
 
 .results {
   padding: var(--page-padding);
+  text-align: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  width: 100%;
 }
 .start {
-  margin: 50% auto;
+  margin: auto auto;
+  height: 100%;
   color: #dfdddd;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
+  list-style: none;
+}
+
+.start > li {
 }
 
 .start > img {
