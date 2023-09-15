@@ -3,7 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Watchlist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Josefin+Sans:wght@400;700&family=Lato:wght@100;300;400;700&family=Poppins:wght@400;600&family=Roboto:wght@400;700&family=Smythe&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Movie Watchlist</title>
   </head>
-  <body></body>
+  <body>
+    <div class="page-wrapper">
+      <header>
+        <section class="page-header">
+          <h1>My Watchlist</h1>
+          <a href="./index.html">Search for movies</a>
+        </section>
+      </header>
+      <section class="results">
+        <div class="start">
+          <p>Your watchlist is looking a little empty...</p>
+          <a href="./index.html" class="add-movies"
+            ><img src="./images/add.svg" alt="" />Let’s add some movies!</a
+          >
+        </div>
+      </section>
+    </div>
+  </body>
 </html>
