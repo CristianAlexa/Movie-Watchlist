@@ -27,37 +27,37 @@ const getMovieDetails = async (array) => {
 
 async function getMoviesHtml(array) {
   const moviesList = await getMovieDetails(array);
-  console.log(moviesList);
   searchResultEl.innerHTML = moviesList
-    .map(
-      (movie) => `
+    .map((movie) => {
+      const { imdbID, Title, Poster, imdbRating, Runtime, Genre, Plot } = movie;
+      return `
   <li>
-    <div class="movie-card" id="${movie.imdbID}">
+    <div class="movie-card" id="${imdbID}">
         <div class="movie-card-image">
-            <img src="${movie.Poster}" alt="${movie.Title}">
+            <img src="${Poster}" alt="${Title}">
         </div>
         <div class="movie-card-details">
             <div class="movie-card-title">
-                ${movie.Title}
+                ${Title}
                 <span class="movie-card-rating">
                     <img src="./images/star.svg">
-                    ${movie.imdbRating}
+                    ${imdbRating}
             </div>
             <ul class="movie-card-hl">
-                <li>${movie.Runtime}</li>
-                <li>${movie.Genre}</li>
+                <li>${Runtime}</li>
+                <li>${Genre}</li>
                 <li>
                     <button class="movie-card-add-btn">
                         <img src="./images/add.svg">Watchlist
                     </button>    
                 </li>
             </ul>
-            <p class="movie-card-plot">${movie.Plot}</p>
+            <p class="movie-card-plot">${Plot}</p>
         </div>
     </div>
   </li>
-  `
-    )
+  `;
+    })
     .join("");
 }
 
@@ -66,8 +66,8 @@ async function getMovieData() {
   const APIurl = `${API}?s=${searchInput}&${APIkey}`;
   const res = await fetch(APIurl);
   const movieData = await res.json();
-  const movieList = movieData.Search;
-  return movieList ? getMoviesHtml(movieList) : getErrorHtml();
+  const movieListID = movieData.Search;
+  return movieListID ? getMoviesHtml(movieListID) : getErrorHtml();
 
   console.log(movieData);
   //   searchInputEl.value = "";
