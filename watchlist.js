@@ -15,7 +15,6 @@ const displaySavedMovies = () => {
     savedMoviesFromLS.length === 0
       ? noSavedMovies
       : getMoviesHtml(savedMoviesFromLS, removeBtn);
-  console.log(savedMoviesFromLS);
 };
 
 const removeFromLS = (e) => {
