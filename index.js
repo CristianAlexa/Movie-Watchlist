@@ -24,13 +24,15 @@ const getMovieToSave = async (id) => {
 };
 
 const getMoviesID = async () => {
-  const searchInput = searchInputEl.value.split(" ").join("+");
-  const APIurl = `${API}?s=${searchInput}&${APIkey}`;
-  const res = await fetch(APIurl);
-  const movieData = await res.json();
-  const movieListID = movieData.Search;
-  searchInputEl.value = "";
-  return movieListID ? displaySearchResults(movieListID) : getErrorHtml();
+  if (searchInputEl.value) {
+    const searchInput = searchInputEl.value.split(" ").join("+");
+    const APIurl = `${API}?s=${searchInput}&${APIkey}`;
+    const res = await fetch(APIurl);
+    const movieData = await res.json();
+    const movieListID = movieData.Search;
+    searchInputEl.value = "";
+    return movieListID ? displaySearchResults(movieListID) : getErrorHtml();
+  }
 };
 
 const getMovieDetails = async (array) => {
